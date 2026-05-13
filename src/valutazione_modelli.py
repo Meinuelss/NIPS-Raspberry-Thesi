@@ -11,7 +11,7 @@ import warnings
 warnings.filterwarnings("ignore") 
 
 print("[*] Caricamento del Dataset (dataset.csv)...")
-df = pd.read_csv("dataset.csv")
+df = pd.read_csv("../dataset/dataset.csv")
 
 # Utilizziamo esattamente le colonne estratte dal tuo CSV
 X = df[['pkt_count', 'syn_count', 'avg_len']] 

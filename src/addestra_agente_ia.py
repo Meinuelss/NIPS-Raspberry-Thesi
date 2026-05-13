@@ -10,7 +10,7 @@ import pickle
 import joblib
 
 print("[*] Caricamento del dataset pulito...")
-df = pd.read_csv('dataset.csv')
+df = pd.read_csv('../dataset/dataset.csv')
 
 # Il nostro CSV è già perfetto: separiamo le statistiche (X) dall'etichetta (y)
 X = df[['pkt_count', 'syn_count', 'avg_len']]
@@ -30,7 +30,7 @@ accuratezza = accuracy_score(y_test, previsioni)
 print(f"\n[+] ACCURATEZZA DEL MODELLO: {accuratezza * 100:.2f}%\n")
 
 print("[*] Salvataggio del file .sav (sovrascrittura)...")
-with open('random_forest.sav', 'wb') as f:
+with open('../modelli/random_forest.sav', 'wb') as f:
     pickle.dump(modello, f)
 print("[+] Fatto! Il nuovo 'random_forest.sav' è pronto per la battaglia.")
 
@@ -40,20 +40,20 @@ print("\n[*] Inizio addestramento ed esportazione dei 4 modelli per il NIPS...")
 print("- Addestramento Decision Tree...")
 modello_dt = DecisionTreeClassifier(random_state=42)
 modello_dt.fit(X, y)
-joblib.dump(modello_dt, 'decision_tree.sav')
+joblib.dump(modello_dt, '../modelli/decision_tree.sav')
 
 # 3. K-Nearest Neighbors (L'algoritmo basato sulle distanze)
 print("- Addestramento K-Nearest Neighbors (KNN)...")
 modello_knn = KNeighborsClassifier(n_neighbors=5)
 modello_knn.fit(X, y)
-joblib.dump(modello_knn, 'knn.sav')
+joblib.dump(modello_knn, '../modelli/knn.sav')
 
 # 4. Logistic Regression (L'approccio probabilistico)
 print("- Addestramento Logistic Regression...")
 # Nota: max_iter=1000 serve per evitare avvisi se il modello impiega tanto a convergere
 modello_lr = LogisticRegression(max_iter=1000, random_state=42)
 modello_lr.fit(X, y)
-joblib.dump(modello_lr, 'logistic_regression.sav')
+joblib.dump(modello_lr, '../modelli/logistic_regression.sav')
 
 print("\n[+] Successo! Tutti i file .sav sono stati generati e sono pronti per i test sul campo.")
 
