@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from scapy.all import sniff, IP, TCP, UDP
 import pandas as pd
-import joblib  # Sostituito pickle con joblib per massima compatibilità con scikit-learn
+import joblib
 import time
 import os
 import sys     # NUOVO IMPORT: Per leggere i comandi dal terminale
