@@ -5,12 +5,12 @@ from sklearn.metrics import accuracy_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
-import joblib # Usiamo solo joblib!
+import joblib
 
 print("[*] Caricamento del dataset pulito...")
 df = pd.read_csv('../dataset/dataset.csv')
 
-# Il nostro CSV è già perfetto: separiamo le statistiche (X) dall'etichetta (y)
+# Separiamo le statistiche (X) dall'etichetta (y)
 X = df[['pkt_count', 'syn_count', 'avg_len']]
 y = df['Label']
 
@@ -18,15 +18,9 @@ print("[*] Divisione dei dati (80% studio, 20% esame)...")
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # --- 1. RANDOM FOREST ---
-print("[*] Addestramento del Super-Cervello NIPS (Random Forest)...")
+print("[*] Addestramento del Random Forest...")
 modello_rf = RandomForestClassifier(n_estimators=100, random_state=42)
 modello_rf.fit(X_train, y_train)
-
-print("[*] Svolgimento dell'esame finale (test di accuratezza)...")
-previsioni = modello_rf.predict(X_test)
-accuratezza = accuracy_score(y_test, previsioni)
-print(f"\n[+] ACCURATEZZA DEL RANDOM FOREST: {accuratezza * 100:.2f}%\n")
-
 print("[*] Salvataggio di random_forest.sav...")
 joblib.dump(modello_rf, '../modelli/random_forest.sav')
 

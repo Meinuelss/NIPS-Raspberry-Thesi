@@ -1,23 +1,18 @@
 import pandas as pd
-import numpy as np
 from sklearn.model_selection import KFold, cross_val_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
-import warnings
-
-# Nascondiamo i warning per avere un output pulito da mostrare al prof
-warnings.filterwarnings("ignore") 
 
 print("[*] Caricamento del Dataset (dataset.csv)...")
 df = pd.read_csv("../dataset/dataset.csv")
 
-# Utilizziamo esattamente le colonne estratte dal tuo CSV
+# Utilizziamo esattamente le colonne estratte dal CSV
 X = df[['pkt_count', 'syn_count', 'avg_len']] 
 y = df['Label']
 
-# Impostiamo la Cross-Validation a 10 Folds come richiesto dal Prof. Botta
+# Impostiamo la Cross-Validation a 10 Folds
 print("[*] Preparazione K-Fold Cross-Validation (10 splits)...")
 kf = KFold(n_splits=10, shuffle=True, random_state=42)
 
