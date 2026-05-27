@@ -30,19 +30,19 @@ print("\n[*] Inizio addestramento ed esportazione degli altri 3 modelli...")
 # --- 2. DECISION TREE ---
 print("- Addestramento Decision Tree...")
 modello_dt = DecisionTreeClassifier(random_state=42)
-modello_dt.fit(X, y)
+modello_dt.fit(X_train, y_train)
 joblib.dump(modello_dt, '../modelli/decision_tree.sav')
 
 # --- 3. K-NEAREST NEIGHBORS (KNN) ---
 print("- Addestramento K-Nearest Neighbors (KNN)...")
 modello_knn = KNeighborsClassifier(n_neighbors=5)
-modello_knn.fit(X, y)
+modello_knn.fit(X_train, y_train)
 joblib.dump(modello_knn, '../modelli/knn.sav')
 
 # --- 4. LOGISTIC REGRESSION ---
 print("- Addestramento Logistic Regression...")
 modello_lr = LogisticRegression(max_iter=1000, random_state=42)
-modello_lr.fit(X, y)
+modello_lr.fit(X_train, y_train)
 joblib.dump(modello_lr, '../modelli/logistic_regression.sav')
 
 print("\n[+] Successo! Tutti i file .sav sono stati generati con Joblib e sono pronti per i test sul campo.")
