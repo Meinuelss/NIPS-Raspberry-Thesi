@@ -52,7 +52,7 @@ test.
 * `Paper/` — Articoli scientifici di riferimento analizzati per lo stato 
 dell'arte.
 
-##️ Prerequisiti e Installazione
+ ## Prerequisiti e Installazione
 Per eseguire il progetto, è richiesto un ambiente Linux (es. Raspberry Pi 
 OS) e Python 3.
 
@@ -89,7 +89,7 @@ sui vari algoritmi utilizzando il dataset fornito:
 python3 src/valutazione_modelli.py
 ```
 
-##️ Nota di Sicurezza sui Certificati
+## Nota di Sicurezza sui Certificati
 All'interno della cartella `certificate/` sono presenti file chiave (es. 
 `key.pem`). Si precisa formalmente che si tratta di **certificati 
 autofirmati e fittizi**, generati esclusivamente in ambito locale per 
