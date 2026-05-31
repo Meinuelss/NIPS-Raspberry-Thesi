@@ -79,7 +79,7 @@ if __name__ == "__main__":
     
     df_finale = df_finale.sample(frac=1).reset_index(drop=True)
     
-    df_finale.to_csv("dataset.csv", index=False)
+    df_finale.to_csv("dataset/dataset.csv", index=False)
     
     print("\nDataset creato con successo! File salvato come 'dataset_nips_finale.csv'.")
     print(df_finale.head())

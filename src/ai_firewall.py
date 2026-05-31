@@ -11,7 +11,7 @@ from collections import defaultdict
 # Controlliamo se l'utente ha scritto il nome del file .sav
 if len(sys.argv) != 2:
     print("[-] Errore: Devi specificare quale modello usare!")
-    print("[-] Esempio: sudo python3 ai_firewall.py random_forest.sav")
+    print("[-] Esempio: sudo python3 src/ai_firewall.py modelli/random_forest.sav")
     sys.exit(1)
 
 MODELLO_IA = sys.argv[1]

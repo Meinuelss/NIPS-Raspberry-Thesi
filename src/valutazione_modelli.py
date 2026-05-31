@@ -6,7 +6,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 
 print("[*] Caricamento del Dataset (dataset.csv)...")
-df = pd.read_csv("../dataset/dataset.csv")
+df = pd.read_csv("dataset/dataset.csv")
 
 # Utilizziamo esattamente le colonne estratte dal CSV
 X = df[['pkt_count', 'syn_count', 'avg_len']] 
