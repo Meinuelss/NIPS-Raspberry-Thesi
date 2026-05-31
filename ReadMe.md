@@ -78,7 +78,7 @@ amministrazione per l'intercettazione dei pacchetti tramite la libreria
 (iptables).
 
 ```bash
-sudo python3 src/ai_firewall.py
+sudo python3 src/ai_firewall.py modelli/random_forest.sav
 ```
 
 ### Valutazione dei Modelli
