@@ -99,7 +99,6 @@ validità esterna, non appartengono a sistemi di produzione reali e la loro
 esposizione non comporta alcun rischio di sicurezza.
 
 ---
-
-##‍ Autore
+## Autore
 * **Manuel Serranò** (Matricola: 1118868)
 * **Relatore:** Prof. Marco Botta
