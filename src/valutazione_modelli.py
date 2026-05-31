@@ -40,4 +40,4 @@ for nome, modello in modelli.items():
     print(f"    -> Deviazione Std    : ± {deviazione:.2f}%")
     print("-" * 45)
 
-print("\n[*] Valutazione completata. Dati pronti per la Tesi!")
+print("\n[*] Valutazione completata<!")
